@@ -45,6 +45,7 @@ def test(t):
  print("unit lvl",t[0],"vs","enemy unit lvl",y)
  x_list =  dice_list(t[0])
  y_list =  dice_list(y)
+ print("")
  print("-------------")
  print("lvl",t[0])
  print("")
@@ -78,23 +79,54 @@ def test(t):
      t.append(y)
      print("collected!")
      print(t)
-     input("keep going?:")
+     go=""
+     while go!=d[0] and go!=d[1]:
+      go=input("keep going?:")
+      if go==d[1] :
+       print("")
+       print("menu")
+       input("quit menu:")
     elif c==d[1]:
      print("not collected...")
+     go=""
+     while go!=d[0] and go!=d[1]:
+      go=input("keep going?:")
+      if go==d[1] :
+       print("")
+       print("menu")
+       input("quit menu:")
   else:
    print("there is nothing left to collect...")
-   input("keep going?:")
+   go=""
+   while go!=d[0] and go!=d[1]:
+    go=input("keep going?:")
+    if go==d[1] :
+     print("")
+     print("menu")
+     input("quit menu:")
  else:
   print("lose")
   del t[0]
   print("your first unit got demolished!")
   if len(t)>=1:
    print(t)
-   input("keep going?:")
+   go=""
+   while go!=d[0] and go!=d[1]:
+    go=input("keep going?:")
+    if go==d[1] :
+     print("")
+     print("menu")
+     input("quit menu:")
   if len(t)==0:
    print("no units left, game over!")
- 
-input("are you ready?:")             
+
+go=""
+while go!=d[0] and go!=d[1]:
+ go=input("are you ready?:")
+ if go==d[1] :
+  print("")
+  print("menu")
+  input("quit menu:")       
 while len(t)>=1:
  print("")
  test(t)
